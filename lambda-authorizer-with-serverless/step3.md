@@ -49,7 +49,6 @@ functions:
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
-
 </pre>
 
 So far nothing special.
