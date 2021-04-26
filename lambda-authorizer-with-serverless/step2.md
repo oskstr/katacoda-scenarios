@@ -1,5 +1,3 @@
-## My first Lambda
-
 Now we can create a file where our Lambda functions will exist. Use the following command:
 
 `touch handler.ts`{{execute}}
@@ -57,6 +55,8 @@ If we now run:
 
 We can see that it is running at `http://localhost:3000/dev/api/hello`.
 
-Try getting a response by running the following cURL command in a separate terminal window:
+Try getting a response by running the following cURL command in a second terminal window:
 
 `curl http://localhost:3000/dev/api/hello`{{execute T2}}
+
+You should now see `Hello World!` printed to the terminal. In the next step we will add another Lambda that returns a secret message instead.
