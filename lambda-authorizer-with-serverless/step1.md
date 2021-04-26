@@ -1,6 +1,8 @@
-### Testing port forwarding
-Render port 3002: https://[[HOST_SUBDOMAIN]]-3002-[[KATACODA_HOST]].environments.katacoda.com/
+## Step 1
+Let's start by getting our feet wet with AWS Lambdas in general. First we would just like to have a simple function that returns `"Hello World!`.
 
-Render port 80: https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/
+Think of a project name. Got it? I'll call mine `project-red` but you can choose whatever you like. Start by creating a new folder with that name and jump to it.
 
-Display page allowing user to select port: https://[[HOST_SUBDOMAIN]]-[[KATACODA_HOST]].environments.katacoda.com/
+`mkdir project-red`{{execute}}
+
+`cd project-red`{{execute}}
