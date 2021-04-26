@@ -53,7 +53,7 @@ plugins:
 
 So far nothing special. Restart the server and try to access the endpoints.
 
-`serverless offline`{execute interrupt T1}
+`serverless offline`{{execute interrupt T1}}
 
 We should see that we have another function as well as another endpoint.
 
