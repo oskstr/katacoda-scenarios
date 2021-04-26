@@ -15,9 +15,10 @@ A Lambda Authorizer is just another Lambda function that returns a policy. A pol
 
 The API Gateway can then cache the result. So if you are uploading a lot of images in bulk using the same API Key you only need to bother the authentication server once. 
 
-![API Overview](assets/lambda-authorizer.png)
-
 ### Serverless
 AWS Lambdas and FaaS in general are examples of what is often called "serverless computing" and one way to handle deployment of those is to use the open source [Serverless Framework](https://www.serverless.com/). The configuration is specified using `.yaml` files and can be deployed directly from the terminal.
 
 Serverless doesn't only work with AWS but also Azure, Google Cloud, and more.
+
+### Project Overview
+![API Overview](assets/lambda-authorizer.png)

@@ -23,7 +23,7 @@ To use serverless we will need to add another file to our project called `server
 
 `touch serverless.yml`{{execute}}
 
-and copy the following configuration.
+and copy the following configuration:
 
 <pre class="file" data-filename="project-red/serverless.yml" data-target="replace">
 service: project-red

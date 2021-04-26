@@ -17,16 +17,20 @@ Add `aws-lambda` as a dependency:
 
 `npm install aws-lambda`{{execute}}
 
-Install `typescript` and `serverless` globally:
+Install `serverless` globally:
 
-`npm install -g typescript serverless`{{execute}}
+`npm install -g serverless`{{execute}}
 
 We are going to install the following developer dependencies:
+- `typescript` - Compile our typescript code
 - `serverless-plugin-typescript` - Automatic typescript compilation for serverless
 - `serverless-offline` - Test code against emulated AWS Lambda and API Gateway
 - `@types/aws-lambda` - Typechecking of types in `aws-lambda` package 
 
-`npm install -D serverless-plugin-typescript serverless-offline @types/aws-lambda`{{execute}}
+`npm install -D typescript serverless-plugin-typescript \
+               serverless-offline @types/aws-lambda`{{execute}}
+
 
 The installation might take a while but in the meantime you can start looking at the next step.
+
 
