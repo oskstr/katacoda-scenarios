@@ -59,4 +59,4 @@ We can see that it is running at `http://localhost:3000/dev/api/hello`.
 
 Try getting a response by running the following cURL command in a separate terminal window:
 
-`curl http://localhost:3000/dev/api/hello`{{execute "Terminal 2"}}
+`curl http://localhost:3000/dev/api/hello`{{execute T2}}

@@ -5,9 +5,10 @@ Think of a project name. Got it? I'll call mine `project-red` but you can choose
 
 Type the following commands or just click on them:
 
-`mkdir project-red`{{execute}}
-
-`cd project-red`{{execute}}
+```
+mkdir project-red
+cd project-red
+```{{execute}}
 
 Now that we are in the correct folder we can initialize the project with default settings:
 
