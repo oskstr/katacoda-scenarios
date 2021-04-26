@@ -25,7 +25,7 @@ We are going to install the following developer dependencies:
 - `@types/aws-lambda` - Typechecking of types in `aws-lambda` package 
 
 `npm install -D typescript serverless serverless-plugin-typescript \
-serverless-offline @types/aws-lambda`{{execute}}
+               serverless-offline @types/aws-lambda`{{execute}}
 
 Now we can create a file where our Lambda functions will exist. Use the following command:
 
