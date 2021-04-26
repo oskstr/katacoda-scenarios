@@ -1,6 +1,6 @@
 There are many ways to handle authorization. Amazon even provides a way to generate API Keys directly. But that is not always an option. This might just be a small part of your system and you might want to handle authorization the same way here.
 
-You could perhaps want to authenticate against som OAuth provider, use JWT tokens, or something completely different.
+You could perhaps want to authenticate against some OAuth provider, use JWT tokens, or something completely different.
 
 To show that anything would work, we will use [PokéAPI](https://pokeapi.co/) which is an API for Pokémon data. What if we just want to show our secret to people who can provide a Pokémon with the *Infiltrator* ability. 
 

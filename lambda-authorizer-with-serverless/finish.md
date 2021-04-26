@@ -1,0 +1,1 @@
+Thanks for following this tutorial and I hope you learned a thing or two about Lambdas and Lambda Authorizers.
