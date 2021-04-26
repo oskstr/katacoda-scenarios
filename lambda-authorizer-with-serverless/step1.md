@@ -1,4 +1,4 @@
-## Step 1
+## Step 1 - Setup
 Let's start by getting our feet wet with AWS Lambdas in general. First we would just like to have a simple function that returns `"Hello World!`.
 
 Think of a project name. Got it? I'll call mine `project-red` but you can choose whatever you like. Start by creating a new folder with that name and jump to it.
@@ -18,7 +18,7 @@ Add `aws-lambda` as a dependency:
 `npm install aws-lambda`{{execute}}
 
 We are going to install the following developer dependencies:
-- `typescript` - To compile our typescript code
+- `typescript` - Compile our typescript code
 - `serverless` - Deploy using serverless framework
 - `serverless-plugin-typescript` - Automatic typescript compilation for serverless
 - `serverless-offline` - Test code against emulated AWS Lambda and API Gateway
@@ -27,22 +27,7 @@ We are going to install the following developer dependencies:
 `npm install -D typescript serverless serverless-plugin-typescript \
                serverless-offline @types/aws-lambda`{{execute}}
 
-Now we can create a file where our Lambda functions will exist. Use the following command:
 
-`touch handler.ts`{{execute}}
+The installation might take a while but when everything is done loading you are ready to continue to the next step.
 
-Let's type the following code in `handler.ts` or simply press the "Copy to Editor" button:
-
-<pre class="file" data-filename="handler.ts" data-target="replace">
-import { APIGatewayProxyResult } from 'aws-lambda';
-
-export const hello = async (): Promise<APIGatewayProxyResult> => {
-    return {
-        statusCode: 200,
-        body: "Hello World!"
-    }
-}
-</pre>
-
-As you can see, it is quite easy to write a simple Lambda function compared to a complete server.
 
