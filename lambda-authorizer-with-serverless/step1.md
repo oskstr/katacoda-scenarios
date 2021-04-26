@@ -9,7 +9,7 @@ Type the following commands or just click on them:
 
 `cd project-red`{{execute}}
 
-Now that we are in the correct folder we can initialize the project:
+Now that we are in the correct folder we can initialize the project with default settings:
 
 `npm init -y`{{execute}}
 
@@ -24,13 +24,14 @@ We are going to install the following developer dependencies:
 - `serverless-offline` - Test code against emulated AWS Lambda and API Gateway
 - `@types/aws-lambda` - Typechecking of types in `aws-lambda` package 
 
-`npm install -D typescript serverless serverless-plugin-typescript serverless-offline @types/aws-lambda`{{execute}}
+`npm install -D typescript serverless serverless-plugin-typescript \
+serverless-offline @types/aws-lambda`{{execute}}
 
 Now we can create a file where our Lambda functions will exist. Use the following command:
 
 `touch handler.ts`{{execute}}
 
-Let's type the following code in `handler.ts`:
+Let's type the following code in `handler.ts` or simply press the "Copy to Editor" button:
 
 <pre class="file" data-filename="handler.ts" data-target="replace">
 import { APIGatewayProxyResult } from 'aws-lambda';
