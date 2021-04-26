@@ -128,10 +128,31 @@ Restart the server again:
 
 `serverless offline`{{execute interrupt T1}}
 
-Now if we try to access the endpoints:
+Let's see what happens with some different calls:
+<pre>
+1. curl http://localhost:3000/dev/api/hello
+Hello World!
 
-`curl http://localhost:3000/dev/api/hello`{{execute T2}}
+2. curl http://localhost:3000/dev/api/secret
+{"statusCode":401,"error":"Unauthorized","message":"Unauthorized"}
 
-We still see `Hello World!` as expected.
+3. curl http://localhost:3000/dev/api/secret -H "Authorization: agumon"
+{"statusCode":401,"error":"Unauthorized","message":"Unauthorized"}
 
-`curl http://localhost:3000/dev/api/secret`{{execute T2}}
+4. curl http://localhost:3000/dev/api/secret -H "Authorization: bulbasaur"
+{"statusCode":403,"error":"Forbidden","message":"User is not authorized to access this resource"}
+
+5. curl http://localhost:3000/dev/api/secret -H "Authorization: zubat"
+This is a super secret message that only authorized users should see!
+</pre>
+
+Okay, so what happened there? 
+
+1. `/hello` still works like before, as expected.
+2. The API Gateway will automatically deny this request since we didn't even provide an `Authorization` header.
+3. We won't find any Pokémon called Agumon - since that is a Digimon character.
+4. Still an error message but a different one. `403` means that the authorizer understood the request and found the "user" but it doesn't have the correct permissions. The correct permission would be the *Infiltrator* ability but Bulbasaur only has *Overgrow* and *Chlorophyll*. 
+5. Zubat does have the *Infiltrator* ability 🎉
+
+
+Nice! Our authorizer works. That's a win in my book! But its still only running locally. In the next step we will deploy our service to AWS using serverless.
