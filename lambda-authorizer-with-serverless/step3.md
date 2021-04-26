@@ -38,18 +38,18 @@ functions:
           path: api/hello
           method: GET
           cors: true
-
-  get-secret:
+  secret:
     handler: handler.secret
     events:
-     - http:
+      - http:
           path: api/secret
           method: GET
           cors: true
-    
+
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
+
 </pre>
 
 So far nothing special.
