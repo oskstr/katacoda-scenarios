@@ -3,7 +3,7 @@ Let's start by getting our feet wet with AWS Lambdas in general. First we would 
 
 Think of a project name. Got it? I'll call mine `project-red` but you can choose whatever you like. Start by creating a new folder with that name and jump to it.
 
-Type the following commands or just click on them:
+Type the following commands or run them by clicking the box:
 
 ```
 mkdir project-red
