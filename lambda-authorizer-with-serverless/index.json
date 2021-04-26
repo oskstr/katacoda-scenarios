@@ -34,7 +34,8 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal"
+    "uilayout": "editor-terminal",
+    "terminals": [{"name": "Terminal 2", "target": "T2"}]
   },
   "backend": {
     "imageid": "ubuntu:2004"
