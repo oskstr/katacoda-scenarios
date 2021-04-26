@@ -28,6 +28,6 @@ We are going to install the following developer dependencies:
                serverless-offline @types/aws-lambda`{{execute}}
 
 
-The installation might take a while but when everything is done loading you are ready to continue to the next step.
+The installation might take a while but in the meantime you can start looking at the next step.
 
 
