@@ -8,14 +8,14 @@ import { APIGatewayProxyResult } from 'aws-lambda';
 export const hello = async (): Promise&lt;APIGatewayProxyResult&gt; => {
     return {
         statusCode: 200,
-        body: "Hello World!"
+        body: "Hello World!\n"
     }
 }
 
 export const secret = async (): Promise&lt;APIGatewayProxyResult&gt; => {
     return {
         statusCode: 200,
-        body: "This is a super secret message that only authorized users should see!"
+        body: "This is a super secret message that only authorized users should see!\n"
     }
 }
 </pre>
@@ -38,7 +38,7 @@ functions:
           path: api/hello
           method: GET
           cors: true
-  secret:
+  get-secret:
     handler: handler.secret
     events:
       - http:
@@ -51,4 +51,16 @@ plugins:
   - serverless-offline
 </pre>
 
-So far nothing special.
+So far nothing special. Restart the server and try to access the endpoints.
+
+`serverless offline`{execute interrupt T1}
+
+We should see that we have another function as well as another endpoint.
+
+`curl http://localhost:3000/dev/api/hello`{{execute T2}}
+
+We see "`Hello World!`", so far so good.
+
+`curl http://localhost:3000/dev/api/secret`{{execute T2}}
+
+😱 we seem to be leaking our secret. That's not good. In the next step we will finally add our Lambda Authorizer to protect this endpoint.

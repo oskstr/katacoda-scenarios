@@ -10,7 +10,7 @@ import { APIGatewayProxyResult } from 'aws-lambda';
 export const hello = async (): Promise&lt;APIGatewayProxyResult&gt; => {
     return {
         statusCode: 200,
-        body: "Hello World!"
+        body: "Hello World!\n"
     }
 }
 </pre>
