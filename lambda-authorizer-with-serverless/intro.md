@@ -24,4 +24,14 @@ The configuration is specified using `.yaml` files and can be deployed directly 
 Serverless doesn't only work with AWS but also Azure, Google Cloud, and more.
 
 ### Project Overview
+We will do the following things:
+- Create AWS Lambda function
+- Create another AWS Lambda function to be restricted to authorized calls
+- Create a Lambda Authorizer talking to external "Authentication Server"
+- Deploy using Serverless
+
+
 ![API Overview](assets/lambda-authorizer.png)
+
+### Issues
+Katacoda provides the ability to click a button to edit a file. I'm not sure if that is it but sometimes during testing I noticed that I got error messages that functions didn't exist when they had just been added to a file. It was resolved when manually editing the files a bit (e.g. adding and then removing a character). So try that if you come across any problems.
