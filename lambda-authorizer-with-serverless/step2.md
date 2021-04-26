@@ -1,4 +1,4 @@
-## Step 2 - My first Lambda
+## My first Lambda
 
 Now we can create a file where our Lambda functions will exist. Use the following command:
 
