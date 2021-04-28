@@ -9,8 +9,8 @@ A policy is an object that specifies if the caller is allowed or denied to use c
 
 <pre class="file">
 {
-    principalId: "some-user-identifier",
-    policyDocument: {
+    "principalId": "some-user-identifier",
+    "policyDocument": {
         "Version": "2012-10-17",
         "Statement": [
             {
