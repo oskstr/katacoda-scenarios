@@ -89,22 +89,16 @@ Restart the server again:
 `serverless offline`{{execute interrupt T1}}
 
 Let's see what happens with some different calls:
-<pre class="file">
-1. curl http://localhost:3000/dev/api/hello
-Hello World!
-
-2. curl http://localhost:3000/dev/api/secret
-{"statusCode":401,"error":"Unauthorized","message":"Unauthorized"}
-
-3. curl http://localhost:3000/dev/api/secret -H "Authorization: agumon"
-{"statusCode":401,"error":"Unauthorized","message":"Unauthorized"}
-
-4. curl http://localhost:3000/dev/api/secret -H "Authorization: bulbasaur"
-{"statusCode":403,"error":"Forbidden","message":"User is not authorized to access this resource"}
-
-5. curl http://localhost:3000/dev/api/secret -H "Authorization: zubat"
-This is a super secret message that only authorized users should see!
-</pre>
+1. `curl http://localhost:3000/dev/api/hello`{{execute T2}}
+   <pre class="file">Hello World!</pre>
+2. `curl http://localhost:3000/dev/api/secret`{{execute T2}}
+   <pre class="file">{"statusCode":401,"error":"Unauthorized","message":"Unauthorized"}</pre>
+3. `curl http://localhost:3000/dev/api/secret -H "Authorization: agumon"`{{execute T2}}
+   <pre class="file">{"statusCode":401,"error":"Unauthorized","message":"Unauthorized"}</pre>
+4. `curl http://localhost:3000/dev/api/secret -H "Authorization: bulbasaur"`{{execute T2}}
+   <pre class="file">{"statusCode":403,"error":"Forbidden","message":"User is not authorized to access this resource"}</pre>
+5. `curl http://localhost:3000/dev/api/secret -H "Authorization: zubat"`{{execute T2}}
+   <pre class="file">This is a super secret message that only authorized users should see!</pre>
 
 Okay, so what happened there? 
 
