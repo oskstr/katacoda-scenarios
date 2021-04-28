@@ -30,8 +30,14 @@ We will do the following things:
 - Create a Lambda Authorizer talking to external "Authentication Server"
 - Deploy using Serverless
 
+This will be the infrastructure layout once we're done:
 
 ![API Overview](assets/lambda-authorizer.png)
 
+- A client can make a request that will be handled by Amazon API Gateway
+- Policy will be evaluated by Lambda Authorizer and cached
+  - If approved, request will go to the Lambda function
+  - If denied, request will be rejected
+
 ### Issues
-Katacoda provides the ability to click a button to edit a file. I'm not sure if that is it but sometimes during testing I noticed that I got error messages that functions didn't exist when they had just been added to a file. It was resolved when manually editing the files a bit (e.g. adding and then removing a character). So try that if you come across any problems.
+> Katacoda provides the ability to click a button to edit a file. I'm not sure if that is it but sometimes during testing I noticed that I got error messages that functions didn't exist when they had just been added to a file. It was resolved when manually editing the files a bit (e.g. adding and then removing a character). So try that if you come across any problems.
