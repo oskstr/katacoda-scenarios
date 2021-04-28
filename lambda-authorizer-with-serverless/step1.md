@@ -21,6 +21,8 @@ Install `serverless` globally:
 
 `npm install -g serverless`{{execute}}
 
+> You will likely see some error messages when installing `serverless`. Luckily they don't seem to affect the installation process so you can ignore them.
+
 We are going to install the following developer dependencies:
 - `typescript` - Compile our typescript code
 - `serverless-plugin-typescript` - Automatic typescript compilation for serverless
