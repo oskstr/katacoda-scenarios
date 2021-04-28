@@ -2,7 +2,7 @@
   "title": "Lambda Authorizer with Serverless",
   "description": "Deploy an AWS Lambda function with a custom Lambda Authorizer function using Serverless",
   "difficulty": "Intermediate",
-  "time": "10 minutes",
+  "time": "15 minutes",
   "details": {
     "steps": [
       {
