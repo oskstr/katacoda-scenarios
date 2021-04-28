@@ -84,6 +84,8 @@ and add an `auth` function to `serverless.yml` and set that function as an autho
     handler: handler.auth
 </pre>
 
+> Here we are also specifying that we are looking for a header called `Authorization`. We could choose any header name. It is also possible to look at query strings, e.g. `method.request.querystring.api_key`.
+
 Restart the server again:
 
 `serverless offline`{{execute interrupt T1}}
