@@ -59,4 +59,6 @@ Try getting a response by running the following cURL command in a second termina
 
 `curl http://localhost:3000/dev/api/hello`{{execute T2}}
 
+> Sometimes clicking the command above just opens the second terminal window without running the command. If that happens you can try to click it again or run it manually.
+
 You should now see `Hello World!` printed to the terminal. In the next step we will add another Lambda that returns a secret message instead.
