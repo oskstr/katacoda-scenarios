@@ -7,7 +7,7 @@ To show that anything would work, we will use [PokéAPI](https://pokeapi.co/) wh
 ### Policies
 A policy is an object that specifies if the caller is allowed or denied to use certain resources. So what the Lambda Authorizer should return generally has this format:
 
-<pre>
+<pre class="file">
 {
     principalId: "some-user-identifier",
     policyDocument: {
@@ -129,7 +129,7 @@ Restart the server again:
 `serverless offline`{{execute interrupt T1}}
 
 Let's see what happens with some different calls:
-<pre>
+<pre class="file">
 1. curl http://localhost:3000/dev/api/hello
 Hello World!
 
