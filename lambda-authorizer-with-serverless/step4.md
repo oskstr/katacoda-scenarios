@@ -28,31 +28,19 @@ First we will just install another dependency, `axios`, to make HTTP calls.
 
 `npm install axios`{{execute interrupt T1}}
 
-
-Then change `handler.ts` to:
-
-<pre class="file" data-filename="project-red/handler.ts" data-target="replace">
+Update the dependencies in `handler.ts` to:
+<pre class="file" data-filename="project-red/handler.ts" data-target="insert" data-marker="import { APIGatewayProxyResult } from 'aws-lambda';">
 import { 
     APIGatewayProxyResult, 
     APIGatewayAuthorizerResult,
     APIGatewayRequestAuthorizerEvent,
 } from 'aws-lambda';
 import axios from 'axios';
+</pre>
 
-export const hello = async (): Promise&lt;APIGatewayProxyResult&gt; => {
-    return {
-        statusCode: 200,
-        body: "Hello World!\n"
-    }
-}
+and add our authorizer function (along with a policy helper function) to `handler.ts`:
 
-export const secret = async (): Promise&lt;APIGatewayProxyResult&gt; => {
-    return {
-        statusCode: 200,
-        body: "This is a super secret message that only authorized users should see!\n"
-    }
-}
-
+<pre class="file" data-filename="project-red/handler.ts" data-target="append">
 export const auth = async (event: APIGatewayRequestAuthorizerEvent): Promise&lt;APIGatewayAuthorizerResult&gt; => {
   const { Authorization: token } = event.headers
   
@@ -67,7 +55,6 @@ export const auth = async (event: APIGatewayRequestAuthorizerEvent): Promise&lt;
         throw Error('Unauthorized')
       })
 }
-
 
 const policy = (allow: boolean, principalId: string, methodArn: string) => {
     return {
@@ -86,43 +73,16 @@ const policy = (allow: boolean, principalId: string, methodArn: string) => {
 }
 </pre>
 
-and change `serverless.yml` to:
+and add an `auth` function to `serverless.yml` and set that function as an authorizer for `get-secret`:
 
-<pre class="file" data-filename="project-red/serverless.yml" data-target="replace">
-service: project-red
-
-provider:
-  name: aws
-  runtime: nodejs12.x
-  lambdaHashingVersion: 20201221
-
-functions:
-  hello:
-    handler: handler.hello
-    events:
-      - http:
-          path: api/hello
-          method: GET
-          cors: true
-  get-secret:
-    handler: handler.secret
-    events:
-      - http:
-          path: api/secret
-          method: GET
-          cors: true
+<pre class="file" data-filename="project-red/serverless.yml" data-target="append">
           authorizer:
             name: auth
             type: request
             identitySource: method.request.header.Authorization
   auth:
     handler: handler.auth
-
-plugins:
-  - serverless-plugin-typescript
-  - serverless-offline
 </pre>
-
 
 Restart the server again:
 

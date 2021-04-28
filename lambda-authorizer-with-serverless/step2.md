@@ -31,6 +31,10 @@ provider:
   runtime: nodejs12.x
   lambdaHashingVersion: 20201221
 
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
 functions:
   hello:
     handler: handler.hello
@@ -39,10 +43,6 @@ functions:
           path: api/hello
           method: GET
           cors: true
-    
-plugins:
-  - serverless-plugin-typescript
-  - serverless-offline
 </pre>
 
 This says that we want to create a new service called `project-red` on `aws`.

@@ -2,16 +2,7 @@ This step should be fairly straight forward. What we will do is to add another L
 
 Start by adding the second Lambda to `handler.ts`:
 
-<pre class="file" data-filename="project-red/handler.ts" data-target="replace">
-import { APIGatewayProxyResult } from 'aws-lambda';
-
-export const hello = async (): Promise&lt;APIGatewayProxyResult&gt; => {
-    return {
-        statusCode: 200,
-        body: "Hello World!\n"
-    }
-}
-
+<pre class="file" data-filename="project-red/handler.ts" data-target="append">
 export const secret = async (): Promise&lt;APIGatewayProxyResult&gt; => {
     return {
         statusCode: 200,
@@ -22,22 +13,7 @@ export const secret = async (): Promise&lt;APIGatewayProxyResult&gt; => {
 
 Then add the function to our `serverless.yml`:
 
-<pre class="file" data-filename="project-red/serverless.yml" data-target="replace">
-service: project-red
-
-provider:
-  name: aws
-  runtime: nodejs12.x
-  lambdaHashingVersion: 20201221
-
-functions:
-  hello:
-    handler: handler.hello
-    events:
-      - http:
-          path: api/hello
-          method: GET
-          cors: true
+<pre class="file" data-filename="project-red/serverless.yml" data-target="append">
   get-secret:
     handler: handler.secret
     events:
@@ -45,10 +21,6 @@ functions:
           path: api/secret
           method: GET
           cors: true
-
-plugins:
-  - serverless-plugin-typescript
-  - serverless-offline
 </pre>
 
 So far nothing special. Restart the server and try to access the endpoints.
